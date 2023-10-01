@@ -1,8 +1,8 @@
-pub struct AnimsPlugin;
+pub struct MinigamesPlugin;
 use valence::prelude::*;
-use cratew::things::animate;
+use crate::minigames::things::animate;
 
-impl Plugin for AnimsPlugin {
+impl Plugin for MinigamesPlugin {
     fn build(&self, app: &mut App) {
         app
         .add_systems(Update, animate);

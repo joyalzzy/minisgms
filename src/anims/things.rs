@@ -55,12 +55,12 @@ fn weird_shape  (
         visual[(x + r) as usize][(z+r) as usize] = shadeness(y); 
         poses.push(IVec3::new(x,y as i32,z));
     }
-    // for row in &visual {
-    //     for &y in row {
-    //         print!("{}", y);
-    //     }
-    //     println!();
-    // }
+    for row in &visual {
+        for &y in row {
+            print!("{}", y);
+        }
+        println!();
+    }
     return poses;
 
 }
