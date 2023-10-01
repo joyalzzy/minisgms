@@ -1,9 +1,10 @@
 #![allow(clippy::type_complexity)]
 
+mod anims;
 use itertools;
 use valence::abilities::{FlyingSpeed, FovModifier, PlayerAbilitiesFlags};
 use valence::prelude::*;
-use minigames::plugin::AnimsPlugin;
+use crate::anims::plugin;
 
 const SPAWN_POS: DVec3 = DVec3::new(0.0, 256.0, 0.0);
 
@@ -33,7 +34,7 @@ pub fn main() {
 
     App::new()
         .add_plugins(DefaultPlugins)
-        .add_plugins(AnimsPlugin)
+        .add_plugins(plugin::AnimsPlugin)
         //.insert_resource(cli)
         .add_systems(Startup, setup)
         .add_systems(

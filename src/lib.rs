@@ -1,2 +1,1 @@
-pub mod things;
-pub mod plugin;
+pub mod anims;
