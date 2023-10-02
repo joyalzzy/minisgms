@@ -1,6 +1,11 @@
-use valence::prelude::*;
+use valence::{prelude::*, network::async_trait};
+use crate::minigames::Minigame;
 
-fn init() {
-    let mut app = App::new();
-    app.add
-}
+pub struct SpleefMinigame {
+}       
+
+impl Minigame for SpleefMinigame {    
+    fn init(&self, world: &mut World, commands: &mut Commands){
+        world.iter_entities().for_each(|b| {println!("{:?}", b.location())})
+    }
+} 

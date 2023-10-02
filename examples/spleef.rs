@@ -1,11 +1,10 @@
 #![allow(clippy::type_complexity)]
 
-mod anims;
 use itertools;
-use minigames::minigames::spleef::SpleefMinigame;
+use minigames::minigames::plugin::MinigamesPlugin;
 use valence::abilities::{FlyingSpeed, FovModifier, PlayerAbilitiesFlags};
 use valence::prelude::*;
-use crate::anims::plugin;
+use minigames::minigames::spleef::*;
 
 const SPAWN_POS: DVec3 = DVec3::new(0.0, 256.0, 0.0);
 
@@ -35,7 +34,6 @@ pub fn main() {
 
     App::new()
         .add_plugins(DefaultPlugins)
-        // .add_plugins(plugin::AnimsPlugin)
         //.insert_resource(cli)
         .add_systems(Startup, setup)
         .add_systems(
@@ -61,11 +59,7 @@ fn setup(
         layer.chunk.insert_chunk([x,z], UnloadedChunk::new());
     }
     commands.spawn(layer);
-    let mut minigame = SpleefMinigame {};
-    minigame:
-
 }
-
 fn init_clients(
     mut clients: Query<
     (
